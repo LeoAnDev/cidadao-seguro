@@ -30,10 +30,10 @@ Certifique-se de que o MySQL está rodando em sua máquina na porta `3306`. O pr
 Crie ou edite o arquivo `.env` na raiz do projeto contendo as seguintes variáveis:
 
 ```env
-DB_HOST=172.24.128.1
-DB_USER=root
-DB_PASSWORD=root
-DB_NAME=cidadaoseguro-db
+DB_HOST=xxx.xxx.xxx.x
+DB_USER=xxxx
+DB_PASSWORD=xxxx
+DB_NAME=xxxx-db
 PORT=3000
 ```
 
