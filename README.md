@@ -30,14 +30,14 @@ Certifique-se de que o MySQL está rodando em sua máquina na porta `3306`. O pr
 Crie ou edite o arquivo `.env` na raiz do projeto contendo as seguintes variáveis:
 
 ```env
-DB_HOST=xxx.xxx.xxx.x
+DB_HOST=xxx.xx.xxx.x
 DB_USER=xxxx
 DB_PASSWORD=xxxx
 DB_NAME=xxxx-db
 PORT=3000
 ```
 
-> **Nota para WSL2**: O IP `172.24.128.1` foi definido por padrão para acessar o MySQL hospedado no Windows a partir do ambiente WSL. Se estiver rodando o Node direto no Windows, altere para `DB_HOST=localhost`.
+> **Nota para WSL2**: O IP `xxx.xx.xxx.x` foi definido por padrão para acessar o MySQL hospedado no Windows a partir do ambiente WSL. Se estiver rodando o Node direto no Windows, altere para `DB_HOST=localhost`.
 
 Você pode criar o banco de dados importando o script `database.sql` diretamente no seu cliente MySQL (Workbench/DBeaver):
 
@@ -74,5 +74,3 @@ O servidor estará rodando na porta `3000`. Acesse `http://localhost:3000` em se
 - **Tema Claro / Escuro**: Botão de alternância localizado na barra superior.
 - **Gerenciamento Completo (CRUD)**: Possibilidade de listar, cadastrar e excluir registros de Cidadãos, Agentes, Bairros e Ocorrências.
 - **Estatísticas Rápidas**: Visualização do total de registros na página de início.
-# cidadao-seguro
-# cidadao-seguro
