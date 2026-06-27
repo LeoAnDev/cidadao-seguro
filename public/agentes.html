@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidadão Seguro - Agentes</title>
+    <link rel="icon" type="image/png" href="/img/logo.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body data-page="agente">
+    <div class="dashboard-container">
+
+        <aside class="sidebar no-print" id="sidebar">
+            <div class="sidebar-header">
+                <h2><img src="/img/logo.png" alt="Logo" class="sidebar-logo"> <span class="sidebar-text">Cidadão Seguro</span></h2>
+                <button id="sidebar-toggle" class="btn-icon sidebar-toggle-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/" class="nav-item "><i class="fa-solid fa-chart-pie" style="color: #3b82f6;"></i> <span class="sidebar-text">Início</span></a>
+                <a href="/cidadaos" class="nav-item "><i class="fa-solid fa-users" style="color: #10b981;"></i> <span class="sidebar-text">Cidadãos</span></a>
+                <a href="/agentes" class="nav-item active"><i class="fa-solid fa-user-shield" style="color: #8b5cf6;"></i> <span class="sidebar-text">Agentes</span></a>
+                <a href="/bairros" class="nav-item "><i class="fa-solid fa-map-location-dot" style="color: #f59e0b;"></i> <span class="sidebar-text">Bairros</span></a>
+                <a href="/ocorrencias" class="nav-item "><i class="fa-solid fa-triangle-exclamation" style="color: #ef4444;"></i> <span class="sidebar-text">Ocorrências</span></a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar no-print">
+                <div class="topbar-title">
+                    <button id="mobile-toggle" class="btn-icon mobile-only"><i class="fa-solid fa-bars"></i></button>
+                    <h1 id="page-title">Agentes</h1>
+                </div>
+                <div class="topbar-actions">
+                    <button id="theme-toggle" class="btn-icon">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="Admin">
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <div id="page-spinner" class="page-spinner">
+                <div class="spinner-circle"></div>
+            </div>
+            <div class="content-wrapper">
+
+                <section class="content-section active">
+                    <div class="section-header">
+                        <h2>Gerenciar Agentes</h2>
+                        <button class="btn btn-primary btn-new"><i class="fa-solid fa-plus"></i> Novo Agente</button>
+                    </div>
+                    <div class="card table-card">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Matrícula</th>
+                                    <th>Cargo</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-agente"></tbody>
+                        </table>
+                    </div>
+                </section>
+        
+            </div>
+            <footer class="admin-footer no-print">
+                <p>&copy; 2026 Cidadão Seguro. Todos os direitos reservados.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Form Modal -->
+    <div id="form-modal" class="modal no-print">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="form-title">Formulário</h2>
+                <button class="btn-icon close-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="dynamic-form" class="admin-form">
+                <input type="hidden" id="edit-id" name="id">
+                <div id="form-fields"></div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary close-modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Modal (for Printing) -->
+    <div id="view-modal" class="modal view-mode">
+        <div class="modal-content printable">
+            <div class="modal-header no-print">
+                <h2>Visualizar Registro</h2>
+                <div>
+                    <button class="btn btn-primary btn-sm" onclick="window.print()"><i class="fa-solid fa-print"></i> Imprimir</button>
+                    <button class="btn-icon close-modal"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div id="view-content" class="view-body">
+                <!-- Content injected via JS -->
+            </div>
+            <div class="form-actions no-print">
+                <button type="button" class="btn btn-secondary close-modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
