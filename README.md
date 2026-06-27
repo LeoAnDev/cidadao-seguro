@@ -74,3 +74,5 @@ O servidor estará rodando na porta `3000`. Acesse `http://localhost:3000` em se
 - **Tema Claro / Escuro**: Botão de alternância localizado na barra superior.
 - **Gerenciamento Completo (CRUD)**: Possibilidade de listar, cadastrar e excluir registros de Cidadãos, Agentes, Bairros e Ocorrências.
 - **Estatísticas Rápidas**: Visualização do total de registros na página de início.
+# cidadao-seguro
+# cidadao-seguro
